@@ -184,7 +184,7 @@ module Aws
         separator = subject =~ /\?/ ? '&' : '?'
 
         subject.gsub!(/\s/, '%20') if configuration_options[:remove_spaces]
-        subject = URI.escape(subject) if configuration_options[:uri_escape]
+        subject = CGI.escape(subject) if configuration_options[:uri_escape]
 
         result = subject +
                  separator +
