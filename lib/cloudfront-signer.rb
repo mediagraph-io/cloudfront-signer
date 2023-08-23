@@ -286,7 +286,7 @@ module Aws
       end
 
       def self.html_encode(s)
-        s.gsub('?', '%3F').gsub('=', '%3D').gsub('&', '%26')
+        s.gsub('?', '%3F').gsub('=', '%3D').gsub('&', '%26').gsub('#', '%23')
       end
     end
   end
